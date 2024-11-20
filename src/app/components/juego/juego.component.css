@@ -1,0 +1,23 @@
+.tablero {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 200px;
+  }
+  
+  .celda {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 1.5em;
+  }
+  
+  .celda:hover {
+    background-color: #ddd;
+  }
+  

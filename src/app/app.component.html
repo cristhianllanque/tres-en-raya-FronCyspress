@@ -6,6 +6,8 @@
 <!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<app-header></app-header> <!-- Encabezado -->
+<router-outlet></router-outlet> <!-- Contenido dinámico de las rutas -->
 
 <style>
   :host {
@@ -427,8 +429,8 @@
   <!-- Terminal -->
   <div class="terminal" [ngSwitch]="selection.value">
       <pre *ngSwitchDefault>ng generate component xyz</pre>
-      <pre *ngSwitchCase="'material'">ng add @angular/material</pre>
-      <pre *ngSwitchCase="'pwa'">ng add @angular/pwa</pre>
+     <!-- <pre *ngSwitchCase="'material'">ng add @angular/material</pre>-->
+      <!--<pre *ngSwitchCase="'pwa'">ng add @angular/pwa</pre>-->
       <pre *ngSwitchCase="'dependency'">ng add _____</pre>
       <pre *ngSwitchCase="'test'">ng test</pre>
       <pre *ngSwitchCase="'build'">ng build</pre>

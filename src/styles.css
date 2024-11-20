@@ -1,1 +1,49 @@
-/* You can add global styles to this file, and also import other style files */
+/* Estilo del encabezado */
+.header-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header-container h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .header-container nav {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .header-container nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .header-container nav a:hover {
+    color: #ffcc00;
+  }
+  
+  /* Clase para indicar el enlace activo */
+  .active-link {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  
+  /* Asegurar que el contenido no quede oculto debajo del encabezado */
+  body {
+    margin: 0;
+    padding-top: 60px; /* Ajusta al tamaño del encabezado */
+  }
+  

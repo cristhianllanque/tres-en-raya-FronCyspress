@@ -1,0 +1,26 @@
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007bff; /* Color azul */
+    color: white; /* Texto blanco */
+    padding: 15px 20px; /* Espaciado interno */
+    position: fixed; /* Encabezado fijo */
+    top: 0; /* Alineado en la parte superior */
+    left: 0;
+    width: 100%; /* Ancho completo */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+    z-index: 1000; /* Prioridad más alta */
+  }
+  
+  .header-container nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .header-container nav a:hover {
+    text-decoration: underline;
+  }
+  
