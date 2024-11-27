@@ -1,23 +1,120 @@
-.tablero {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    max-width: 200px;
-  }
-  
-  .celda {
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    font-size: 1.5em;
-  }
-  
-  .celda:hover {
-    background-color: #ddd;
-  }
-  
+/* Contenedor principal del juego */
+.game-container {
+  background: linear-gradient(90deg, #0f0c29, #302b63, #24243e);
+  color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  margin: 100px auto 0 auto; /* Centrado con margen superior */
+  position: relative;
+}
+
+/* Contenedor para el marcador (casi pegado al tablero) */
+.game-info-container {
+  position: absolute;
+  top: -40px; /* Ajustamos para que esté más cerca del tablero */
+  width: 80%; /* Reduce el ancho del marcador */
+  max-width: 400px;
+  left: 50%;
+  transform: translateX(-50%); /* Centra el marcador */
+  z-index: 10;
+  display: flex;
+  justify-content: space-between; /* Alinea los elementos horizontalmente */
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para los datos dentro del marcador, alineados horizontalmente */
+.game-info-container h3,
+.game-info-container p {
+  margin: 0;
+  padding: 0 10px;
+  font-size: 1rem;
+}
+
+.game-info-container p {
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* Contenedor del puntaje (partida), al costado de la izquierda */
+.puntaje-info {
+  position: absolute;
+  bottom: -350px; /* Mueve más abajo respecto al contenedor principal */
+  left: -190px; /* Ajustado al costado izquierdo */
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+/* Estilo del tablero de juego */
+.game-board-container {
+  position: relative;
+  margin-top: 80px; /* Asegura que el tablero no esté pegado al borde superior */
+  margin-left: 10px;
+}
+
+/* Estilos del tablero y las celdas */
+.game-board {
+  display: grid;
+  grid-template-rows: repeat(3, 100px);
+  grid-template-columns: repeat(3, 100px);
+  gap: 5px;
+}
+
+.cell {
+  background: #4a4e69;
+  color: #fff;
+  font-size: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  cursor: pointer;
+  height: 100px;
+  width: 100px;
+}
+
+.cell:hover {
+  background: #6c757d;
+}
+
+.winner-cell {
+  background: #ffd700;
+}
+
+.winning-line {
+  position: absolute;
+  background-color: red;
+  height: 5px;
+  border-radius: 2.5px;
+}
+
+/* Ajuste de la información de los jugadores en el marcador, ahora en fila */
+.info-container {
+  display: flex;
+  justify-content: space-between; /* Alinea los jugadores de izquierda a derecha */
+  align-items: center; /* Centra los elementos verticalmente */
+  width: 100%;
+}
+
+.jugador-info {
+  margin: 0;
+  padding: 5px;
+  text-align: center;
+}
+
+.jugador-info h3 {
+  font-size: 1.2rem;
+}
+
+.jugador-info p {
+  margin: 5px 0;
+}

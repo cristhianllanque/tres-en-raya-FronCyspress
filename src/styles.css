@@ -1,49 +1,15 @@
-/* Estilo del encabezado */
-.header-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
+
+body {
+  background-image: url('https://s3-alpha-sig.figma.com/img/ac64/0bc5/818cc350d85ac3291dcbbefee4201322?Expires=1733097600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=eKmy5~~rCSPORa20Sq2NPB7FE56uoO~Rs7LmRYZ-HgwU2Jr8etuwWMYGjg8XAdeo8MLMa5mIb590OcURfW2DVyFeax47--ZLkh4lAHO9DJmTwkJN~Fbe5IS0mkTs1MtOyN6ey-ypvErXrNoX1c90OII-TGEMrBRPOvqfRsmgcJmWp-K08sENuvcBsUtmrYITPnbe4163GzWdl8SzGtz826~NmKYmSlcNkPLnSGeJajJHjR8YFkQGYHxH3lDm~U4dzCap6SzWJDJsm35k02V3zPhqFK3E~Xv7vhRCgVc0hUPQG6kPhRwcUFh9AVSmQSY4NzUaZcoFmcnFORtm~gn76A__');
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0;
+  font-family: Arial, sans-serif; /* Cambia según tus preferencias */
   
-  .header-container h1 {
-    margin: 0;
-    font-size: 24px;
-  }
-  
-  .header-container nav {
-    display: flex;
-    gap: 15px;
-  }
-  
-  .header-container nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s ease-in-out;
-  }
-  
-  .header-container nav a:hover {
-    color: #ffcc00;
-  }
-  
-  /* Clase para indicar el enlace activo */
-  .active-link {
-    font-weight: bold;
-    text-decoration: underline;
-  }
-  
-  /* Asegurar que el contenido no quede oculto debajo del encabezado */
-  body {
-    margin: 0;
-    padding-top: 60px; /* Ajusta al tamaño del encabezado */
-  }
-  
+}
+
+html, body {
+  height: 100%;
+}

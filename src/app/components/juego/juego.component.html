@@ -1,2 +1,52 @@
-<h2>Iniciar Juego</h2>
-<p>Aquí irá la lógica para iniciar el juego de Tres en Raya.</p>
+<!-- Contenedor principal para el tablero de juego -->
+<div class="game-container d-flex flex-column align-items-center">
+  <!-- Contenedor para el marcador -->
+  <div class="game-info-container">
+    <!-- Información de los jugadores y puntajes -->
+    <div class="info-container d-flex justify-content-between w-100 mb-3">
+      <!-- Jugador 1 -->
+      <div class="jugador-info">
+        <h3>{{ player1Name }}</h3>
+        <p>Signo: <span>O</span></p>
+        <p>Puntaje: <span>{{ player1Score }}</span></p>
+      </div>
+
+      <!-- Información de partidas -->
+      <div class="puntaje-info text-center">
+        <p>Partida: {{ currentRound }} / {{ totalRounds }}</p>
+      </div>
+
+      <!-- Jugador 2 -->
+      <div class="jugador-info">
+        <h3>{{ player2Name }}</h3>
+        <p>Signo: <span>X</span></p>
+        <p>Puntaje: <span>{{ player2Score }}</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tablero de juego -->
+  <div class="game-board-container position-relative mb-4">
+    <div class="game-board position-relative">
+      <div *ngFor="let row of board; let i = index" class="row">
+        <div
+          *ngFor="let cell of row; let j = index"
+          class="cell"
+          [ngClass]="{'winner-cell': isWinnerCell(i, j)}"
+          (click)="makeMove(i, j)"
+        >
+          {{ cell }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Resultado final -->
+  <div *ngIf="isGameOver" class="resultado-final text-center">
+    <h2>
+      {{ winner ? '¡Eres el ganador final, ' + winner + '!' : '¡Empate!' }}
+    </h2>
+    <button class="btn btn-primary me-2" (click)="restartGame()">¡Jugar de nuevo!</button>
+    <button class="btn btn-secondary" (click)="volverAlMenuPrincipal()">Regresar al Menú Principal</button>
+  </div>
+</div>

@@ -1,0 +1,100 @@
+/* Establecemos el fondo del contenedor principal */
+.game-wrapper {
+  position: relative; /* Necesario para que los elementos hijos con z-index funcionen */
+  height: 100vh;
+  background-image: url('src/app/components/inicio/tres en raya.webp');
+  background-size: auto 80%; /* Ajusta la altura de la imagen al 80% del contenedor, sin recortarla */
+  background-position: center; /* Centra la imagen en el contenedor */
+  background-repeat: no-repeat;
+  padding-top: 10%; /* Ajusta el espacio superior */
+  padding-bottom: 10%; /* Ajusta el espacio inferior */
+  border-radius: 20px; /* Redondea las esquinas de la imagen */
+  overflow: hidden; /* Asegura que la imagen no sobresalga de los bordes redondeados */
+}
+
+/* Estilo para el contenedor principal donde están los botones y el formulario */
+.game-container {
+  position: relative; /* Para permitir que el contenido esté por encima de la imagen */
+  z-index: 1; /* Asegura que este contenido esté encima de la imagen */
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.0); /* Fondo oscuro semitransparente con mayor transparencia */
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.0);
+}
+
+/* Título */
+.game-title {
+  font-family: 'Arial', sans-serif; /* O puedes usar otra fuente más moderna si prefieres */
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para darle profundidad */
+  margin-top: 10px;
+  margin-bottom: 2px;
+}
+
+/* Botones */
+.game-buttons {
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+/* Botón seleccionado */
+.btn-selected {
+  background-color: #f7a500; /* Color anaranjado para el botón seleccionado */
+  color: white;
+  border-color: #f7a500;
+}
+
+/* Contenedor del formulario con animación */
+.form-container {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(112, 0, 118, 0.9);
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Animación de desvanecimiento */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Formulario animado */
+.animated-form {
+  opacity: 1;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Opciones de botones */
+.btn-outline-danger,
+.btn-outline-primary {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Cambiar color de fondo en hover */
+.btn:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.form-label{
+color: antiquewhite;
+font-size: medium;
+}

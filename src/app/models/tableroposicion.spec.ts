@@ -1,10 +1,7 @@
-import { TableroPosicion } from './tableroposicion';  // Esto es correcto
+import { Tableroposicion } from './tableroposicion';
 
-
-
-describe('TableroPosicion', () => {
+describe('Tableroposicion', () => {
   it('should create an instance', () => {
-    expect(new TableroPosicion()).toBeTruthy();
+    expect(new Tableroposicion()).toBeTruthy();
   });
 });
-

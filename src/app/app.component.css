@@ -1,0 +1,18 @@
+/* Estilos globales */
+body {
+    background-color: #f8f9fa; /* Color de fondo claro */
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Estilo para el encabezado */
+  app-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+  }
+  
+  /* Margen entre las secciones */
+  .mt-3 {
+    margin-top: 1rem;
+  }
+  
