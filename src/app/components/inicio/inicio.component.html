@@ -1,46 +1,77 @@
 <div class="game-wrapper">
   <div class="game-container d-flex flex-column justify-content-center align-items-center">
-    <h1 class="game-title display-2 text-center text-danger p-2 rounded shadow-lg ">Tic Tac Toe</h1>
+    <h1 class="game-title display-2 text-center text-danger p-2 rounded shadow-lg">Tic Tac Toe</h1>
 
     <!-- Botones para seleccionar el modo de juego -->
     <div class="game-buttons mt-4 d-flex gap-3">
-      <button class="btn"
-        [ngClass]="{'btn-selected': modoJuego === 'jugadorVsJugador', 'btn-outline-danger': modoJuego !== 'jugadorVsJugador'}"
-        (click)="seleccionarModoJuego('jugadorVsJugador')">
+      <button
+        class="btn"
+        [ngClass]="{
+          'btn-selected': modoJuego === 'jugadorVsJugador',
+          'btn-outline-danger': modoJuego !== 'jugadorVsJugador'
+        }"
+        (click)="seleccionarModoJuego('jugadorVsJugador')"
+      >
         Jugar Persona
       </button>
-      <button class="btn"
-        [ngClass]="{'btn-selected': modoJuego === 'jugadorVsComputadora', 'btn-outline-primary': modoJuego !== 'jugadorVsComputadora'}"
-        (click)="seleccionarModoJuego('jugadorVsComputadora')">
+      <button
+        class="btn"
+        [ngClass]="{
+          'btn-selected': modoJuego === 'jugadorVsComputadora',
+          'btn-outline-primary': modoJuego !== 'jugadorVsComputadora'
+        }"
+        (click)="seleccionarModoJuego('jugadorVsComputadora')"
+      >
         Jugar Computadora
       </button>
     </div>
 
     <!-- Contenedor del formulario con animaciones -->
     <div class="form-container mt-4" *ngIf="modoJuego" [ngClass]="{'fade-in': showForm}">
+      <!-- Paso 1: Formulario para Jugador 1 -->
       <div *ngIf="step === 1" class="animated-form">
         <div class="mb-3">
           <label for="jugador1" class="form-label">Nombre del Jugador 1</label>
-          <input type="text"
+          <input
+            type="text"
             id="jugador1"
             class="form-control"
             [ngClass]="{'is-invalid': showErrors && !nombreJugadorUno.trim()}"
             [(ngModel)]="nombreJugadorUno"
-            placeholder="Jugador 1" />
+            placeholder="Jugador 1"
+          />
         </div>
         <button class="btn btn-success" (click)="nextStep()">Siguiente</button>
       </div>
 
-      <div *ngIf="step === 2" class="animated-form">
-        <!-- En el caso de jugar contra la computadora, no mostramos el campo de Jugador 2 -->
+      <!-- Paso 2: Formulario para Jugador 2 (solo si es jugadorVsJugador) -->
+      <div *ngIf="step === 2 && modoJuego === 'jugadorVsJugador'" class="animated-form">
+        <div class="mb-3">
+          <label for="jugador2" class="form-label">Nombre del Jugador 2</label>
+          <input
+            type="text"
+            id="jugador2"
+            class="form-control"
+            [ngClass]="{'is-invalid': showErrors && !nombreJugadorDos.trim()}"
+            [(ngModel)]="nombreJugadorDos"
+            placeholder="Jugador 2"
+          />
+        </div>
+        <button class="btn btn-success" (click)="nextStep()">Siguiente</button>
+      </div>
+
+      <!-- Paso 3: Formulario para el número de partidas -->
+      <div *ngIf="step === 2 && modoJuego === 'jugadorVsComputadora' || step === 3" class="animated-form">
         <div class="mb-3">
           <label for="numPartidas" class="form-label">Número de Partidas</label>
-          <input type="number"
+          <input
+            type="number"
             id="numPartidas"
             class="form-control"
             [ngClass]="{'is-invalid': showErrors && numPartidas <= 0}"
             [(ngModel)]="numPartidas"
-            placeholder="Número de partidas" />
+            placeholder="Número de partidas"
+          />
         </div>
         <button class="btn btn-warning" (click)="startMatch()">Iniciar Juego</button>
       </div>
